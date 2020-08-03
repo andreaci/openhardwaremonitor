@@ -29,18 +29,18 @@ extern "C"
 
 int main()
 {
-	auto timeStart = time(nullptr);
+  auto timeStart = time(nullptr);
 
-	// Ideally our parent process will shut us down before the 10 seconds is up,
-	// but just to be sure, we'll shut ourselves down after 10 seconds.
-	while (time(nullptr) < timeStart + 10)
-	{
-		IDirect3D9* d3dobject = Direct3DCreate9(D3D_SDK_VERSION);
+  // Ideally our parent process will shut us down before the 10 seconds is up,
+  // but just to be sure, we'll shut ourselves down after 10 seconds.
+  while (time(nullptr) < timeStart + 10)
+  {
+    IDirect3D9* d3dobject = Direct3DCreate9(D3D_SDK_VERSION);
 
-		// We use this in the parent program to detect when the program is running.
-		printf("Spinning\n");
+    // We use this in the parent program to detect when the program is running.
+    printf("Spinning\n");
 
-		if(!FAILED(d3dobject))
-			d3dobject->Release();
-	}
+    if (!FAILED(d3dobject))
+      d3dobject->Release();
+  }
 }
