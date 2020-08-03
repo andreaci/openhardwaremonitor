@@ -277,6 +277,7 @@ namespace OpenHardwareMonitor.Hardware.LPC {
 
         ushort vendorID = port.ReadWord(FINTEK_VENDOR_ID_REGISTER);
 
+
         // disable the hardware monitor i/o space lock on NCT679XD chips
         if (address == verify && (
           chip == Chip.NCT6791D ||
@@ -338,6 +339,7 @@ namespace OpenHardwareMonitor.Hardware.LPC {
           case Chip.NCT6776F:
           case Chip.NCT6779D:
           case Chip.NCT6791D:
+
           case Chip.NCT6792D:
           case Chip.NCT6792DA:
           case Chip.NCT6793D:
