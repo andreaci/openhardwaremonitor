@@ -121,7 +121,12 @@ namespace OpenHardwareMonitor.Hardware.LPC {
               chip = Chip.F71878AD;
               logicalDeviceNumber = FINTEK_HARDWARE_MONITOR_LDN;
               break;
-          } break;
+         
+            case 0x18:
+              chip = Chip.F71811;
+              logicalDeviceNumber = FINTEK_HARDWARE_MONITOR_LDN;
+              break;
+            }break;
         case 0x52:
           switch (revision) {
             case 0x17:
